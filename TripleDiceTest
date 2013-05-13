@@ -1,0 +1,17 @@
+
+public class TripleDiceTest {
+
+  
+	public static void main(String[] args) {
+		TripleDice1 tri=new TripleDice1();
+		System.out.printf("Roll Three Dice 1st:%d\n", tri.RollDiceTriple());
+		tri.Reset();
+		System.out.printf("Roll Three Dice 2nd:%d\n", tri.RollDiceTriple());
+		System.out.printf("Roll with with initial and max:%d\n", tri.RollDice(6, 6));
+		System.out.printf("Roll with with initial and max:%d\n", tri.RollDice(2, 8));
+		System.out.printf("Count # Roll static:%d\n",tri.RollCountS());
+		System.out.printf("Count # Roll public:%d\n",tri.RollCount());
+		
+	}
+
+}
