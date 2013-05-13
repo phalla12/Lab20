@@ -1,0 +1,51 @@
+
+public class TripleDice1 extends Dice1 
+{  
+	public int Count;
+	static int CountS=0;
+	static int accumulateS;
+	public int accumulate;
+		public int RollDiceTriple()
+		{
+			int number;
+			number=super.RollDice() + super.RollDice() + super.RollDice();
+			accumulate= accumulate + number;
+			Count++;
+			return number;
+		}
+		public int RollDice()
+		{
+			int number;
+			number= 1 + (int)(Math.random()*6);
+			accumulate= accumulate + number;
+			Count++;
+			return number;
+		}
+		public int RollCount()
+		{
+			
+			System.out.printf("Total Number Points public:%d\n", accumulate);
+			return Count;
+		}
+		public static int RollDice(int n,int max)
+		{
+			int number=0;
+			for (int i=1;i<=n;i++)
+			{
+				number= number + 1 + (int)(Math.random()*max);
+				accumulateS= accumulateS + number;
+				CountS=CountS+1;
+				
+			}
+			return number;
+		}
+		public static int RollCountS()
+		{
+			System.out.printf("Total Number Points Static:%d\n", accumulateS);
+			return CountS;
+		}
+		public void Reset()
+		{
+			Count=0;
+		}
+}
